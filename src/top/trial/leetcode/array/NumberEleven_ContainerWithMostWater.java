@@ -26,7 +26,8 @@ public class NumberEleven_ContainerWithMostWater {
 		int[] nums = { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
 		int expected = 49;
 
-		int result = getMaxContainerOne(nums);
+		// int result = getMaxContainerOne(nums);
+		int result = getMaxContainerTwo(nums);
 
 		Assert.assertEquals(expected, result);
 	}
@@ -49,8 +50,28 @@ public class NumberEleven_ContainerWithMostWater {
 		return maxContainer;
 	}
 
+	/**
+	 * 官方推荐的双指针法，时间复杂度O(n) 关键在于双指针法的原理
+	 * 
+	 * @param nums
+	 * @return
+	 */
 	private int getMaxContainerTwo(int[] nums) {
+		int maxContainer = 0;
+		int i = 0;
+		int j = nums.length - 1;
 
-		return 0;
+		while (i < j) {
+			if ((j - i) * Math.min(nums[i], nums[j]) > maxContainer) {
+				maxContainer = (j - i) * Math.min(nums[i], nums[j]);
+			}
+			if (nums[i] < nums[j]) {
+				i++;
+			} else {
+				j--;
+			}
+		}
+
+		return maxContainer;
 	}
 }
