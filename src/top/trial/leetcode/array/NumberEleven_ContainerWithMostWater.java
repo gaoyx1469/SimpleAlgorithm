@@ -52,6 +52,7 @@ public class NumberEleven_ContainerWithMostWater {
 
 	/**
 	 * 官方推荐的双指针法，时间复杂度O(n) 关键在于双指针法的原理
+	 * 每次循环舍弃短的一个边
 	 * 
 	 * @param nums
 	 * @return

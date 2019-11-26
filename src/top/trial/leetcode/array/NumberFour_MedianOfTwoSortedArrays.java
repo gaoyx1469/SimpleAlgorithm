@@ -200,6 +200,7 @@ public class NumberFour_MedianOfTwoSortedArrays {
 
 	/**
 	 * leetCode标准答案，研究研究
+	 * 在m和n中分别找到中位数的左右值，如果m+n是偶数：然后取最大左值和最小右值，即可求得中位数，如果是奇数，取得最大左值即是中位数。
 	 * 
 	 * @param nums1
 	 * @param nums2
