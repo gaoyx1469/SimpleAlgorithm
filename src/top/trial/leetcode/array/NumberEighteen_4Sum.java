@@ -1,6 +1,7 @@
 package top.trial.leetcode.array;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Assert;
@@ -40,29 +41,93 @@ public class NumberEighteen_4Sum {
 		ex1.add(1);
 
 		List<Integer> ex2 = new ArrayList<Integer>();
-		ex1.add(-2);
-		ex1.add(-1);
-		ex1.add(1);
-		ex1.add(2);
+		ex2.add(-2);
+		ex2.add(-1);
+		ex2.add(1);
+		ex2.add(2);
 
 		List<Integer> ex3 = new ArrayList<Integer>();
-		ex1.add(-2);
-		ex1.add(0);
-		ex1.add(0);
-		ex1.add(2);
+		ex3.add(-2);
+		ex3.add(0);
+		ex3.add(0);
+		ex3.add(2);
 
 		expected.add(ex1);
 		expected.add(ex2);
 		expected.add(ex3);
 
-		List<List<Integer>> result = get3SumClosestOne(nums, target);
+		List<List<Integer>> result = get4SumOne(nums, target);
 
 		Assert.assertEquals(expected, result);
 
 	}
 
-	private List<List<Integer>> get3SumClosestOne(int[] nums, int target) {
-		return null;
+	/**
+	 * 三数之和问题的基础上求解4数之和
+	 * 
+	 * @param nums
+	 * @param target
+	 * @return
+	 */
+	private List<List<Integer>> get4SumOne(int[] nums, int target) {
+		
+		Arrays.sort(nums);
+		List<List<Integer>> result = new ArrayList<List<Integer>>();
+		
+		for(int i = 0; i < nums.length - 3; i++) {
+			result.addAll(getAll3SumTwo(Arrays.copyOfRange(nums,i,nums.length-1), nums[i]));
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * 从左开始遍历小于等于0的元素，然后双指针遍历右侧部分，寻找三个值总和为0的，时间复杂度O(n*n)
+	 * 
+	 * @param nums
+	 * @return
+	 */
+	private List<List<Integer>> getAll3SumTwo(int[] nums, int target) {
+		Arrays.sort(nums);
+		List<List<Integer>> result = new ArrayList<List<Integer>>();
+		List<Integer> temp;
+		int start;
+		int end;
+		for (int i = 0; i < nums.length - 2; i++) {
+			start = i + 1;
+			end = nums.length - 1;
+			while (nums[i] <= (0-target) && (i == 0 || (i > 0 && nums[i] != nums[i - 1])) && start < end) {
+				if (nums[i] + nums[start] + nums[end] == (0-target)) {
+					// 去重
+					temp = new ArrayList<Integer>();
+					temp.add(target);
+					temp.add(nums[i]);
+					temp.add(nums[start]);
+					temp.add(nums[end]);
+					result.add(temp);
+					start++;
+					while (start < nums.length && start > 1 && nums[start] == nums[start - 1]) {
+						start++;
+					}
+					end--;
+					while (end + 1 < nums.length && end > 1 && nums[end] == nums[end + 1]) {
+						end--;
+					}
+				} else if (nums[i] + nums[start] + nums[end] < (0-target)) {
+					start++;
+					while (start < nums.length && start > 1 && nums[start] == nums[start - 1]) {
+						start++;
+					}
+				} else {
+					end--;
+					while (end < nums.length - 1 && end > 1 && nums[end] == nums[end + 1]) {
+						end--;
+					}
+				}
+			}
+		}
+
+		return result;
 	}
 
 }
