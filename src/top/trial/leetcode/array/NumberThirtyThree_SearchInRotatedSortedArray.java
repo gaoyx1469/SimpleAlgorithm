@@ -37,7 +37,7 @@ public class NumberThirtyThree_SearchInRotatedSortedArray {
 		int[] nums = { 8, 9, 2, 3, 4 };
 		int target = 9;
 		int expected = 1;
-		int result = SearchInRotatedSortedArrayOne(nums, target);
+		int result = searchInRotatedSortedArrayOne(nums, target);
 		Assert.assertEquals(expected, result);
 	}
 
@@ -51,7 +51,7 @@ public class NumberThirtyThree_SearchInRotatedSortedArray {
 	 * @param nums
 	 * @return
 	 */
-	private int SearchInRotatedSortedArrayOne(int[] nums, int target) {
+	private int searchInRotatedSortedArrayOne(int[] nums, int target) {
 
 		int start = 0;
 		int end = nums.length - 1;
