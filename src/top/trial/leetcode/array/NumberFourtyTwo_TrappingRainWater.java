@@ -43,104 +43,45 @@ public class NumberFourtyTwo_TrappingRainWater {
 		Assert.assertEquals(expected, result);
 	}
 
+	/**
+	 * 参考力扣官方题解双指针法
+	 * 
+	 * @param height
+	 * @return
+	 */
 	private int getTrappingRainWaterTwo(int[] height) {
 
 		// 每一个沟都从升变降一直到下个升变降，两个变化点取小的一个为水位线，计算沟中所有小于水位线的点与水位线的差值的和
-		int heightLength = height.length;
 		int rtValue = 0;
+		// 储水效果是中间高，两边低
+		int left = 0;
+		int right = height.length - 1;
+		int leftMax = 0;
+		int rightMax = 0;
 
-		// 小于3个长度的数组无法储水
-		if (heightLength < 3) {
-			return rtValue;
-		}
+		while (left < right) {
 
-		// 用于储存所有顶点
-		Map<Integer, Integer> points = new HashMap<Integer, Integer>();
+			// 双指针，右比左大时，移动左指针，否则移动右指针
+			if (height[left] < height[right]) {
 
-		// 1.找到所有升变降
-		for (int i = 0; i < heightLength; i++) {
-
-			if (i == 0) {// 第一个点特殊处理
-				if (height[i] > height[i + 1]) {
-					points.put(i, height[i]);
+				if (height[left] < leftMax) {// 左指针现在的位置小于左侧最高位
+					rtValue += leftMax - height[left];
+				} else {// 左指针现在的位置大于左侧最高位，更新左侧最高位
+					leftMax = height[left];
 				}
-			} else if (i == heightLength - 1) {
-				if (height[i] > height[i - 1]) {
-					points.put(i, height[i]);
+				left++;
+			} else {
+				if (height[right] < rightMax) {// 右指针现在的位置小于右侧最高位
+					rtValue += rightMax - height[right];
+				} else {// 右指针现在的位置大于右侧最高位，更新右侧最高位
+					rightMax = height[right];
 				}
-			} else if (height[i - 1] <= height[i] && height[i + 1] < height[i]) {// 得到顶点，如果多个等高点在一起，取最后一个
-				points.put(i, height[i]);
-			}
-		}
-
-		// 一个峰值无法储水
-		if (points.size() == 1) {
-			return rtValue;
-		}
-
-		int topIndex = 0;
-		int top = -1;
-		// 拿到第一个最高峰
-		for (int i = 0; i < height.length; i++) {
-			if (height[i] > top) {
-				topIndex = i;
-				top = height[i];
-			}
-		}
-
-		// 2.继续优化points，去除谷值
-		int orgLength = points.size();
-		int newLength = 0;
-		while (newLength < orgLength) {
-			orgLength = points.size();
-			Map<Integer, Integer> newPoints = kickPoints(points, topIndex);
-			points = newPoints;
-			newLength = points.size();
-		}
-
-		// 3.两个峰值间的雨水求和
-		Boolean firstFlag = true;
-		Entry<Integer, Integer> lastEntry = null;
-		Set<Entry<Integer, Integer>> set = points.entrySet();
-		for (Entry<Integer, Integer> entry : set) {
-
-			if (firstFlag) {// 第一个
-				firstFlag = false;
-				lastEntry = entry;
-				continue;
+				right--;
 			}
 
-			rtValue = rtValue + getRainWater(height, entry, lastEntry);
-			lastEntry = entry;
-
 		}
+
 		return rtValue;
-	}
-
-	// 剔除多余点
-	private Map<Integer, Integer> kickPoints(Map<Integer, Integer> points, int topIndex) {
-
-		Map<Integer, Integer> newPoints = new HashMap<Integer, Integer>();
-		newPoints.putAll(points);
-		Entry<Integer, Integer> theLastEntry = null;
-		Set<Entry<Integer, Integer>> set = points.entrySet();
-		for (Entry<Integer, Integer> entry : set) {
-			if (theLastEntry == null) {
-				theLastEntry = entry;
-				continue;
-			}
-			if (entry.getKey() < topIndex) {
-				if (theLastEntry.getValue() > entry.getKey()) {
-					newPoints.remove(entry.getKey());
-				}
-			} else if (entry.getKey() > topIndex) {
-				if (theLastEntry.getValue() < entry.getKey()) {
-					newPoints.remove(entry.getKey());
-				}
-			}
-			theLastEntry = entry;
-		}
-		return newPoints;
 	}
 
 	/**
