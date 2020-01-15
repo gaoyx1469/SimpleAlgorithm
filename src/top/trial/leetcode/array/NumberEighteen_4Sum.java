@@ -128,6 +128,7 @@ public class NumberEighteen_4Sum {
 	 * @param target
 	 * @return
 	 */
+	@SuppressWarnings("unused")
 	private List<List<Integer>> get4SumTwo(int[] nums, int target) {
 
 		Arrays.sort(nums);

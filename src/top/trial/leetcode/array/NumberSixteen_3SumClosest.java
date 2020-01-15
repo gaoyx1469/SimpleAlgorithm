@@ -41,6 +41,7 @@ public class NumberSixteen_3SumClosest {
 	 * @param target
 	 * @return
 	 */
+	@SuppressWarnings("unused")
 	private int get3SumClosestOne(int[] nums, int target) {
 
 		int result = Integer.MAX_VALUE;

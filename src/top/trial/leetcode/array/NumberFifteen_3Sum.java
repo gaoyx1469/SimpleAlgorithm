@@ -2,11 +2,8 @@ package top.trial.leetcode.array;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -48,6 +45,7 @@ public class NumberFifteen_3Sum {
 	 * @param nums
 	 * @return
 	 */
+	@SuppressWarnings("unused")
 	private List<List<Integer>> getAll3SumOne(int[] nums) {
 
 		List<List<Integer>> all3SumOne = new ArrayList<List<Integer>>();

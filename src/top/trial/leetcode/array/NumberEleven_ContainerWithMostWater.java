@@ -38,6 +38,7 @@ public class NumberEleven_ContainerWithMostWater {
 	 * @param nums
 	 * @return
 	 */
+	@SuppressWarnings("unused")
 	private int getMaxContainerOne(int[] nums) {
 		int maxContainer = 0;
 		for (int i = 1; i < nums.length; i++) {

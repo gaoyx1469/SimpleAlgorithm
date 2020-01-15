@@ -90,6 +90,7 @@ public class NumberFourtyTwo_TrappingRainWater {
 	 * @param height
 	 * @return
 	 */
+	@SuppressWarnings("unused")
 	private int getTrappingRainWaterOne(int[] height) {
 
 		// 每一个沟都从升变降一直到下个升变降，两个变化点取小的一个为水位线，计算沟中所有小于水位线的点与水位线的差值的和

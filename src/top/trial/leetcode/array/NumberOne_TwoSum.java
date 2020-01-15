@@ -47,6 +47,7 @@ public class NumberOne_TwoSum {
 	 * @param target
 	 * @return
 	 */
+	@SuppressWarnings("unused")
 	private int[] methodOne(int[] nums, int target) {
 		for (int i = 1; i < nums.length; i++) {
 			for (int j = 0; j < i; j++) {

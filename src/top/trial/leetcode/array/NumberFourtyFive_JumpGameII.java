@@ -43,6 +43,7 @@ public class NumberFourtyFive_JumpGameII {
 	 * @param nums
 	 * @return
 	 */
+	@SuppressWarnings("unused")
 	private int getMinStepOne(int[] nums) {
 
 		int nextStepIndex = nums.length - 1;

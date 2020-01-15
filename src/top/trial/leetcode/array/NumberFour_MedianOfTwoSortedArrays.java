@@ -50,6 +50,7 @@ public class NumberFour_MedianOfTwoSortedArrays {
 	 * @param nums2
 	 * @return
 	 */
+	@SuppressWarnings("unused")
 	private float methodOne(int[] nums1, int[] nums2) {
 
 		// 存放nums1数组剩余内容的中位数
