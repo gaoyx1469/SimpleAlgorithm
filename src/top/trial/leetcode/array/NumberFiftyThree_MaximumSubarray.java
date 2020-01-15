@@ -31,8 +31,19 @@ public class NumberFiftyThree_MaximumSubarray {
 		Assert.assertEquals(expected, result);
 	}
 
+	// 贪心算法？
 	private int getMaximumSubarraySumOne(int[] nums) {
 
-		return 0;
+		int maxSum = nums[0];
+		int currSum = nums[0];
+
+		for (int i = 1; i < nums.length; i++) {
+
+			currSum = Math.max(nums[i], nums[i] + currSum);
+			maxSum = Math.max(maxSum, currSum);
+
+		}
+
+		return maxSum;
 	}
 }
