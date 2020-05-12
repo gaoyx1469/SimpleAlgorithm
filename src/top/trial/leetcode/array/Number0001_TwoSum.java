@@ -25,7 +25,7 @@ import org.junit.Test;
  * @author gaoyx
  *
  */
-public class NumberOne_TwoSum {
+public class Number0001_TwoSum {
 
 	@Test
 	public void solution() {

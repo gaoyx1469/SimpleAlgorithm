@@ -20,7 +20,7 @@ import org.junit.Test;
  * @author Gaoyx
  *
  */
-public class NumberFifteen_3Sum {
+public class Number0015_3Sum {
 
 	@Test
 	public void solution() {

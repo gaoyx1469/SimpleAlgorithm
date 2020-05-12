@@ -28,7 +28,7 @@ import org.junit.Test;
  * @author gaoyx
  *
  */
-public class NumberFour_MedianOfTwoSortedArrays {
+public class Number0004_MedianOfTwoSortedArrays {
 	@Test
 	public void solution() {
 		int[] nums1 = { 1, 2, 6, 7 };

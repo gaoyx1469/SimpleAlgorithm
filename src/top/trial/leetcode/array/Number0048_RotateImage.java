@@ -32,7 +32,7 @@ import org.junit.Test;
  * @author gaoyx
  *
  */
-public class NumberFourtyEight_RotateImage {
+public class Number0048_RotateImage {
 
 	@Test
 	public void solution() {

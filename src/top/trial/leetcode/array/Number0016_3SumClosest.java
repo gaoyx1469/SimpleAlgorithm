@@ -19,7 +19,7 @@ import org.junit.Test;
  * @author Gaoyx
  *
  */
-public class NumberSixteen_3SumClosest {
+public class Number0016_3SumClosest {
 
 	@Test
 	public void solution() {

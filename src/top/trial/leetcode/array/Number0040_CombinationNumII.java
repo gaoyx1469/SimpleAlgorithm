@@ -34,7 +34,7 @@ import org.junit.Test;
  * @author gaoyx
  *
  */
-public class NumberForty_CombinationNumII {
+public class Number0040_CombinationNumII {
 
 	@Test
 	public void solution() {

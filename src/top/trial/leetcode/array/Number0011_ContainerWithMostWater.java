@@ -19,7 +19,7 @@ import org.junit.Test;
  * @author Gaoyx
  *
  */
-public class NumberEleven_ContainerWithMostWater {
+public class Number0011_ContainerWithMostWater {
 
 	@Test
 	public void solution() {

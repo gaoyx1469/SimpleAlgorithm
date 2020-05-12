@@ -20,7 +20,7 @@ import org.junit.Test;
  * @author Gaoyx
  *
  */
-public class NumberFiftyThree_MaximumSubarray {
+public class Number0053_MaximumSubarray {
 	@Test
 	public void solution() {
 		int[] nums = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };

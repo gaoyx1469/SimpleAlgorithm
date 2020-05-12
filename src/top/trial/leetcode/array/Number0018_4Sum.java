@@ -27,7 +27,7 @@ import org.junit.Test;
  * @author Gaoyx
  *
  */
-public class NumberEighteen_4Sum {
+public class Number0018_4Sum {
 
 	@Test
 	public void solution() {
