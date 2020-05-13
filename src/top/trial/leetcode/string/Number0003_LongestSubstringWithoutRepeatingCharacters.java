@@ -27,25 +27,44 @@ import org.junit.Test;
  * @author Gaoyx
  *
  */
-public class NumberThree_LongestSubstringWithoutRepeatingCharacters {
+public class Number0003_LongestSubstringWithoutRepeatingCharacters {
 
 	@Test
 	public void solution() {
 		String str = "pwwkew";
 		int expected = 3;
 
-		int result = getLongestSubstringWithoutRepeatingCharacters(str);
+		int result = getLongestSubstringWithoutRepeatingCharactersOne(str);
 
 		Assert.assertEquals(expected, result);
 	}
 
 	/**
+	 * 笨办法试验
 	 * 
 	 * @param str
 	 * @return
 	 */
-	private int getLongestSubstringWithoutRepeatingCharacters(String str) {
+	private int getLongestSubstringWithoutRepeatingCharactersOne(String str) {
 
-		return 0;
+		int start = 0;
+		int end = 0;
+		int maxLen = 1;
+		char[] strs = str.toCharArray();
+
+		for (int i = 1; i < str.length(); i++) {
+
+			// 循环比较串中字符
+			for (int j = end; j >= start; j--) {
+				if (strs[j] == strs[i]) {// 有重复的了
+					start = j + 1;// start从重复位的下一位开始
+					break;
+				}
+			}
+			end = i;// end位取最后一位
+			maxLen = Math.max(maxLen, (end - start + 1));
+		}
+
+		return maxLen;
 	}
 }
