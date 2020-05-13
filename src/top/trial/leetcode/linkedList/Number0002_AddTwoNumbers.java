@@ -20,7 +20,7 @@ import org.junit.Test;
  * @author Gaoyx
  *
  */
-public class NumberTwo_AddTwoNumbers {
+public class Number0002_AddTwoNumbers {
 	@Test
 	public void solution() {
 		ListNode l1 = new ListNode(2);

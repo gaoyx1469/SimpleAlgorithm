@@ -44,7 +44,7 @@ import org.junit.Test;
  * @author Gaoyx
  *
  */
-public class NumberTwentySeven_RemoveElement {
+public class Number0027_RemoveElement {
 
 	@Test
 	public void solution() {

@@ -29,7 +29,7 @@ import org.junit.Test;
  * @author gaoyx
  *
  */
-public class NumberThirtyNine_CombinationNum {
+public class Number0039_CombinationNum {
 
 	@Test
 	public void solution() {

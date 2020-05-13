@@ -29,7 +29,7 @@ import org.junit.Test;
  * @author gaoyx
  *
  */
-public class NumberThirtyThree_SearchInRotatedSortedArray {
+public class Number0033_SearchInRotatedSortedArray {
 
 	@Test
 	public void solution() {

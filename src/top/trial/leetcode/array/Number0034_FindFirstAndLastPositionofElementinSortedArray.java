@@ -25,7 +25,7 @@ import org.junit.Test;
  * @author gaoyx
  *
  */
-public class NumberThirtyFour_FindFirstAndLastPositionofElementinSortedArray {
+public class Number0034_FindFirstAndLastPositionofElementinSortedArray {
 
 	@Test
 	public void solution() {

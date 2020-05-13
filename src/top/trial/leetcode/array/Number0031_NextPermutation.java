@@ -21,7 +21,7 @@ import org.junit.Test;
  * @author gaoyx
  *
  */
-public class NumberThirtyOne_NextPermutation {
+public class Number0031_NextPermutation {
 
 	@Test
 	public void solution() {

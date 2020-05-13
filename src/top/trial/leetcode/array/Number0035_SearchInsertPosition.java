@@ -30,7 +30,7 @@ import org.junit.Test;
  * @author gaoyx
  *
  */
-public class NumberThirtyFive_SearchInsertPosition {
+public class Number0035_SearchInsertPosition {
 
 	@Test
 	public void solution() {

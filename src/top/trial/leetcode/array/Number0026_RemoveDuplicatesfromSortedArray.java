@@ -40,7 +40,7 @@ import org.junit.Test;
  * @author Gaoyx
  *
  */
-public class NumberTwentySix_RemoveDuplicatesfromSortedArray {
+public class Number0026_RemoveDuplicatesfromSortedArray {
 	@Test
 	public void solution() {
 		int[] nums = { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };

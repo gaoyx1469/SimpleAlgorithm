@@ -24,7 +24,7 @@ import org.junit.Test;
  *
  */
 
-public class NumberFourtyTwo_TrappingRainWater {
+public class Number0042_TrappingRainWater {
 
 	@Test
 	public void solution() {

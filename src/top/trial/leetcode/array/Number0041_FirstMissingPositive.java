@@ -28,7 +28,7 @@ import org.junit.Test;
  * @author gaoyx
  *
  */
-public class NumberFourtyOne_FirstMissingPositive {
+public class Number0041_FirstMissingPositive {
 
 	@Test
 	public void solution() {
@@ -69,7 +69,7 @@ public class NumberFourtyOne_FirstMissingPositive {
 			return 2;
 		}
 
-		// 看是否有大于数组长度的数或者负数3，全部赋值为1
+		// 看是否有大于数组长度的数或者负数，全部赋值为1
 		for (int i = 0; i < nums.length; i++) {
 			if (nums[i] > nums.length || nums[i] <= 0)
 				nums[i] = 1;

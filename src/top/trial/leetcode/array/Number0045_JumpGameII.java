@@ -25,7 +25,7 @@ import org.junit.Test;
  * @author Gaoyx
  *
  */
-public class Number0045JumpGameII {
+public class Number0045_JumpGameII {
 	@Test
 	public void solution() {
 		int[] nums = { 2, 3, 1, 1, 4 };
