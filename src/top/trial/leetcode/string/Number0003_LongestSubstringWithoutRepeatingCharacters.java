@@ -51,6 +51,10 @@ public class Number0003_LongestSubstringWithoutRepeatingCharacters {
 		int end = 0;
 		int maxLen = 1;
 		char[] strs = str.toCharArray();
+		
+		if(strs.length == 0) {
+			return 0;
+		}
 
 		for (int i = 1; i < str.length(); i++) {
 
