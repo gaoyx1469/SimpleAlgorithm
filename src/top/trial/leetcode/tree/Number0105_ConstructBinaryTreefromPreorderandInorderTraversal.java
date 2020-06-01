@@ -48,7 +48,8 @@ public class Number0105_ConstructBinaryTreefromPreorderandInorderTraversal {
 		tn20.right = tn7;
 		tn3.left = tn9;
 		tn3.right = tn20;
-		TreeNode result = constructBinaryTreeOne(preorder, inorder);
+		// TreeNode result = constructBinaryTreeOne(preorder, inorder);
+		TreeNode result = constructBinaryTreeTwo(preorder, inorder);
 		getResult(result);
 
 	}
@@ -62,9 +63,23 @@ public class Number0105_ConstructBinaryTreefromPreorderandInorderTraversal {
 	}
 
 	/**
+	 * 另有使用栈来迭代的方法
+	 * 
+	 * @param preorder
+	 * @param inorder
+	 * @return
+	 */
+	private TreeNode constructBinaryTreeTwo(int[] preorder, int[] inorder) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/**
 	 * 数据结构课上好像讲过
 	 * 
 	 * 可以假设树中没有重复的元素，这一条为查找元素位置提供可能
+	 * 
+	 * 此处使用递归
 	 * 
 	 * @param preorder 前序遍历数组
 	 * @param inorder  中序遍历数组
@@ -99,8 +114,8 @@ public class Number0105_ConstructBinaryTreefromPreorderandInorderTraversal {
 				if (i > 0) {
 					TreeNode left = new TreeNode(preorder[1]);
 					root.left = left;
-					int[] leftPre = Arrays.copyOfRange(preorder, 1, i);
-					int[] leftIn = Arrays.copyOfRange(inorder, 0, i - 1);
+					int[] leftPre = Arrays.copyOfRange(preorder, 1, i + 1);
+					int[] leftIn = Arrays.copyOfRange(inorder, 0, i);
 					getLeftAndRightByRoot(left, leftPre, leftIn);
 				}
 				if (i < preorder.length - 1) {
