@@ -30,8 +30,35 @@ public class Number0238_ProductofArrayExceptSelf {
 	public void solution() {
 		int[] nums = { 1, 2, 3, 4 };
 		int[] expected = { 24, 12, 8, 6 };
-		int[] result = getProductofArrayExceptSelfOne(nums);
+		// int[] result = getProductofArrayExceptSelfOne(nums);
+		int[] result = getProductofArrayExceptSelfTwo(nums);
 		Assert.assertArrayEquals(expected, result);
+	}
+
+	/**
+	 * 进阶要求：常量空间复杂度
+	 * 
+	 * @param nums
+	 * @return
+	 */
+	private int[] getProductofArrayExceptSelfTwo(int[] nums) {
+
+		int[] result = new int[nums.length];
+
+		// 前缀积
+		result[0] = 1;
+		for (int i = 1; i < nums.length; i++) {
+			result[i] = result[i - 1] * nums[i - 1];
+		}
+
+		// 后缀积临时存储
+		int suf = 1;
+		for (int i = nums.length - 1; i >= 0; i--) {
+			result[i] = suf * result[i];
+			suf *= nums[i];
+		}
+
+		return result;
 	}
 
 	/**
