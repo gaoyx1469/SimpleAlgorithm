@@ -1,8 +1,6 @@
 package top.trial.leetcode.array;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -23,6 +21,8 @@ import org.junit.Test;
  * 
  * 0 <= matrix.length <= 100 0 <= matrix[i].length <= 100
  * 
+ * 此题与Number0054相同
+ * 
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/shun-shi-zhen-da-yin-ju-zhen-lcof
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
@@ -30,7 +30,7 @@ import org.junit.Test;
  * @author Gaoyx
  *
  */
-public class NumberF0289_SysoArray {
+public class NumberF029_SysoArray {
 
 	@Test
 	public void solution() {
