@@ -14,7 +14,7 @@ import org.junit.Test;
  * 
  * 提示：
  * 
- * 0 <= num < 231
+ * 0 <= num < 2^31
  * 
  * @author Gaoyx
  *
