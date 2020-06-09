@@ -46,9 +46,6 @@ public class NumberF046_NumberToString {
 		int len = nums.length;
 		int[] results = new int[len + 1];
 
-		if (len == 1)
-			return 1;
-
 		// 铺底数据
 		results[0] = 1;
 		results[1] = 1;
