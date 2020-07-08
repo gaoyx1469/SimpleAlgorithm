@@ -52,15 +52,16 @@ public class NumberF1611_DivingBoardLCCI {
 
 		if (shorter == longer) {
 			return new int[] { shorter * k };
-		} else {
-			int diff = longer - shorter;
-			int min = shorter * k;
-			int[] result = new int[k + 1];
-			for (int i = 0; i <= k; i++, min += diff) {
-				result[i] = min;
-			}
-			return result;
+		} 
+		
+		int diff = longer - shorter;
+		int min = shorter * k;
+		int[] result = new int[k + 1];
+		for (int i = 0; i <= k; i++, min += diff) {
+			result[i] = min;
 		}
+		return result;
+		
 	}
 
 }
