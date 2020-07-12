@@ -64,13 +64,13 @@ public class Number0174_DungeonGame {
         for (int i = m - 1; i >= 0; --i) {
             for (int j = n - 1; j >= 0; --j) {
                 if (i < m - 1 && j < n - 1) {//两个方向
-                    result[i][j] = Math.max(result[i + 1][j], result[i][j + 1]) == 0 ? (dungeon[i][j] > 0 ? 0 : dungeon[i][j]) : (Math.max(result[i + 1][j], result[i][j + 1]) + dungeon[i][j]) > 0 ? 0 : Math.max(result[i + 1][j], result[i][j + 1]) + dungeon[i][j];
+                    result[i][j] = Math.max(result[i + 1][j], result[i][j + 1]) == 0 ? (Math.min(dungeon[i][j], 0)) : Math.min((Math.max(result[i + 1][j], result[i][j + 1]) + dungeon[i][j]), 0);
                 } else if (i < m - 1) {//最右一列
-                    result[i][j] = dungeon[i][j] + result[i + 1][j] > 0 ? 0 : dungeon[i][j] + result[i + 1][j];
+                    result[i][j] = Math.min(dungeon[i][j] + result[i + 1][j], 0);
                 } else if (j < n - 1) {//最下一行
-                    result[i][j] = dungeon[i][j] + result[i][j + 1] > 0 ? 0 : dungeon[i][j] + result[i][j + 1];
+                    result[i][j] = Math.min(dungeon[i][j] + result[i][j + 1], 0);
                 } else {//右下角
-                    result[i][j] = dungeon[i][j] > 0 ? 0 : dungeon[i][j];
+                    result[i][j] = Math.min(dungeon[i][j], 0);
                 }
             }
         }
