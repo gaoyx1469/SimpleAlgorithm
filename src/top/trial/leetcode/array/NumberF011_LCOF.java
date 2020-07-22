@@ -67,9 +67,9 @@ public class NumberF011_LCOF {
     private int minArrayOne(int[] numbers) {
         int result = numbers[0];
 
-        for (int i = 0; i < numbers.length; ++i) {
-            if (numbers[i] < result) {
-                result = numbers[i];
+        for (int number : numbers) {
+            if (number < result) {
+                result = number;
                 break;
             }
         }
