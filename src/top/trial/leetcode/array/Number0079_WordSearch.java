@@ -1,5 +1,6 @@
 package top.trial.leetcode.array;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -36,7 +37,46 @@ import org.junit.Test;
  */
 public class Number0079_WordSearch {
     @Test
-    public void solution(){
-      
+    public void solution() {
+        char[][] board = {{'A', 'B', 'C', 'E'}, {'S', 'F', 'C', 'S'}, {'A', 'D', 'E', 'E'}};
+        String word = "ABCCED";
+        Assert.assertTrue(wordSearchOne(board, word));
+    }
+
+    int[][] directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+
+    private boolean wordSearchOne(char[][] board, String word) {
+
+        char[] words = word.toCharArray();
+        boolean[][] checked = new boolean[board.length][board[0].length];
+        for (int i = 0; i < board.length; ++i) {
+            for (int j = 0; j < board[0].length; ++i) {
+                if (words[0] == board[i][j])
+                    if (canSearch(board, word, checked, i, j, 0))
+                        return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean canSearch(char[][] board, String word, boolean[][] checked, int i, int j, int index) {
+        if (word.charAt(index) != board[i][j])//第index位没匹配上，返回false，匹配上了，继续往下走
+            return false;
+        if (index == word.length() - 1)//既然匹配上了，如果是最后一个字符都匹配上了，那直接返回true
+            return true;
+        //匹配上了且index不是最后一个字符，当前字符算作已访问，继续看下一字符
+        checked[i][j] = true;
+        for (int[] direct : directions) {//四个方向看一看
+            int x = i + direct[0];
+            int y = j + direct[1];
+            if (x >= 0 && x <= board.length - 1 && y <= 0 && y >= board[0].length - 1) {//新位置符合边界约束
+                if (!checked[x][y]) {//新位置未访问过
+                    if (canSearch(board, word, checked, x, y, index + 1))
+                        return true;
+                }
+            }
+        }
+        checked[i][j] = false;//走到这里，四个方向都走不通，当前点置为未访问，返回false
+        return false;
     }
 }
