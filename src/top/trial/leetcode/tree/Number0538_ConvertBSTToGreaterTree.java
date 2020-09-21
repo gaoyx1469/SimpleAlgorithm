@@ -41,7 +41,6 @@ public class Number0538_ConvertBSTToGreaterTree {
         if (root == null)
             return null;
         //反向中续遍历并改值
-        int val = 0;
         unmrd(root);
         return root;
     }
