@@ -34,7 +34,7 @@ import java.util.List;
  * @Date 2020/7/21
  * @Version 1.0
  */
-public class Numebr0530_MinimumAbsoluteDifferenceInBST {
+public class Number0530_MinimumAbsoluteDifferenceInBST {
     @Test
     public void solution() {
         TreeNode root = new TreeNode(1);
