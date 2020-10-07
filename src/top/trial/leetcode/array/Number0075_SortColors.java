@@ -55,7 +55,6 @@ public class Number0075_SortColors {
 				++p0;
 			}
 		}
-
 	}
 
 }
